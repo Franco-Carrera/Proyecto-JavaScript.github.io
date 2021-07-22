@@ -27,7 +27,6 @@ html {
     font-family: var(--font);
     font-size: 16px;
     scroll-behavior: smooth;
-    background-color: #935116 ;
 }
 
 *,
@@ -171,7 +170,31 @@ p {
 
 }
 /*-----------------------------------  */
+/**********Components*******************  */
 
+/**********HeroImage**************************  */
+.hero-image {
+    background-image: var(--hero-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    background-attachment: var(--hero-attachment);
+}
+.hero-image-opacity {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);
+ }
+ 
+.hero-image-title {
+     font-size: 7.5vw;
+     color: var(--hero-text-color);
+ }
+ 
 .header {
   position: fixed;
   left: 0;
@@ -195,16 +218,6 @@ p {
      font-size: 2rem;
      text-decoration: none;
  } 
-
- @media screen and (min-width: 1024px) {
-
- .header {
-  position: sticky;
-  top: 0;
-  padding: 0.5rem;
-  height: calc(var(--header-height)- 0.5rem);
-}
- }
 
 /***********Menú**********  */
  .menu-btn {
@@ -271,6 +284,15 @@ p {
     }
  }
 
+ @media screen and (min-width: 1024px) {
+    .header {
+     position: sticky;
+     top: 0;
+     padding: 0.5rem;
+     height: calc(var(--header-height)- 0.5rem);
+   }
+}
+
 /******************Equipos********/
 .container {
   display: grid;
@@ -316,5 +338,11 @@ p {
     width: 80%;
   }
 
+}
+
+.logo-fix {
+ width: 45%;
+ font-weight: bold;
+ fill: var(--first-color);
 }
 

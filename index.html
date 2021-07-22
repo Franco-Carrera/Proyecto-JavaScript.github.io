@@ -13,14 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 <!--__________________________________________________ -->
   
-   <link rel="stylesheet" href="css/estilos.css"> 
+   <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
-
   <header class="header">
     <section class="contein">
         <div class="logo">
-            <a href="index.html"></a>
+           <img class="logo-fix" src="assets/fix.png" alt="logo fix">
         </div>
         <button class="menu-btn">
            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/></svg>
@@ -33,10 +32,22 @@
         </nav>
     </section>
  </header>
+ <section id="inicio" class="home">
+  <article class="hero-image" style="--hero-image: url('assets/hero-image-home.jpg'); 
+  --hero-attachment:fixed;">
+      <aside class="hero-image-opacity" style="--hero-opacity-color:var(--black-alpha-color);">
+          <div class="hero-image-content">
+             <h2 class="hero-image-title" style="--hero-text-color:var(--white-color);">Bienvenid@s<br>
+               <!-- a mi sitio  -->
+             </h2>
+               <a href="#contacto" class="btn">CONTÁCTAME</a>
+          </div>
+      </aside>  
+  </article>
+</section>
 
   <h1>Fixture de personas</h1>
-
-  <h3>Primer Team</h3>
+   <h3>Primer Team</h3>
  <div class="container">   
   
   <div class="box box1">
@@ -47,12 +58,15 @@
   <div class="box">2</div>
   <div class="box">3</div>
   
+
+ <!-- Practicar solo acordate -->
   <!-- <div class="box">4</div>
   <div class="box">5</div>
   <div class="box box6">6</div> -->
 
 
-  <script src="script.js"></script>  
+  <script src="script.js"></script> 
+  <script src="menu.js"></script> 
 </body>
 </html>
 
