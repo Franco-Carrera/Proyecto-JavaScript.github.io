@@ -1,4 +1,5 @@
 class Team {
+  //entidad
   constructor(color, fecha, personas) {
     this.color = color;
     this.fecha = fecha;
@@ -14,7 +15,7 @@ class Persona {
     this.edad = edad;
   }
 }
-let arrayTablaCompleta = [];
+let arrayTablaCompleta = []; //array con TEAMS
 
 //***************LOCALSTORAGE*****************/
 //funcion guardar
@@ -29,6 +30,11 @@ function descargarLocalStorage(clave) {
 
 function mostrarEquipos() {
   console.log("Equipos: ", descargarLocalStorage("TablaCompleta"));
+}
+
+function añadirColor() {
+  const $colour = document.getElementById("box1");
+  $colour.style.backgroundColor = "lightgreen";
 }
 
 function anadirEquipo(e) {
@@ -57,7 +63,7 @@ function anadirEquipo(e) {
     div1.appendChild(p1);
     div1.appendChild(p2);
 
-    let imprimir = document.getElementById("aca");
+    let imprimir = document.getElementById("box");
     imprimir.appendChild(div1);
   });
 
@@ -66,9 +72,14 @@ function anadirEquipo(e) {
   guardarLocalStorage("TablaCompleta", arrayTablaCompleta);
 }
 
+//------------------------------------------------------------------ boton y evento añadir equipo
 let boton1 = document.getElementById("btnd");
 boton1.addEventListener("click", anadirEquipo);
 
+let boton2 = document.getElementById("colour");
+boton2.addEventListener("click", añadirColor);
+
+//----- boton y evento para mostrar formulario
 let mostrarMenu = document.getElementById("mostrarMenu");
 mostrarMenu.addEventListener("click", mostrarFormulario);
 
@@ -76,7 +87,6 @@ mostrarMenu.addEventListener("click", mostrarFormulario);
 function mostrarFormulario() {
   document.getElementById("menuAgregar").classList.toggle("oculto");
 }
-
 //------------------------------------------------------------------
 
 //SI NO HAY NADA GUARDADO SIGUE VACIO EL ARRAY arrayTablaCompleta
@@ -86,8 +96,9 @@ if (descargarLocalStorage("TablaCompleta") != null) {
 }
 
 let respuestaCrearEquipo = prompt(
+  //idea de que aparezca primero que todo.
   'Quieres añadir equipo responder "si" para continuar'
-); //idea de que aparezca primero que todo.
+);
 while (respuestaCrearEquipo === "si") {
   anadirEquipo();
   respuestaCrearEquipo = prompt(
@@ -99,8 +110,5 @@ mostrarEquipos();
 
 let contenedor = document.getElementsByTagName("div")[2];
 contenedor.style.backgroundColor = "grey";
-
-// let contenedor = document.getElementsByTagName("div")[2];
-// contenedor.style.backgroundColor = "grey";
 
 //ENTER para confirmar acción
