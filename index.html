@@ -54,22 +54,11 @@
   </section>
 
   <h1>Menu Fixture</h1>
-  <button id="colour">colour</button>
+  <button id="colour">Color Table one</button>
   <button id="mostrarMenu">+</button>
-  <div id="menuAgregar" class="oculto">
-    <form id="formularioPersonas" autocomplete="off">
-      <input type="text" id="color" placeholder="color">
-      <input type="text" id="fecha" placeholder="Ingrese fecha">
-      <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
-      <input type="text" id="nombre" placeholder="nombre">
-      <input type="text" id="edad" placeholder="edad">
-      <button id="btnd">Agregar persona</button>
-      <!--Por ahora nombre y edad-->
-    </form>
-  </div>
-  <div id="listado"></div>
+  <button id="eliminarDatos">-</button>
 
-  <article class="tabla-titles">
+  <article id="acerca" class="tabla-titles">
     <h3>Primer Team</h3>
     <h3>Segundo Team</h3>
     <h3>Tercer Team</h3>
@@ -81,6 +70,18 @@
       <div class="info">
         Iniciando mi cuadrícula de presentación.
         LLegamos hasta aquí con tal objetivo
+        <div id="menuAgregar" class="oculto">
+          <form id="formularioPersonas" autocomplete="off">
+            <input type="text" id="color" placeholder="color">
+            <input type="text" id="fecha" placeholder="Ingrese fecha">
+            <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
+            <input type="text" id="nombre" placeholder="nombre">
+            <input type="text" id="edad" placeholder="edad">
+            <button id="btnd">Agregar persona</button>
+            <!--Por ahora nombre y edad-->
+          </form>
+        </div>
+        <div id="listado"></div>
       </div>
     </div>
 
