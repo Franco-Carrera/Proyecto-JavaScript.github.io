@@ -100,7 +100,6 @@ function mostrarEquipos() {
 function cambiarTema() {
   document.body.classList.toggle("colours1");
 }
-contenedor.style.backgroundColor = "grey";
 
 //funcion para mostrar menu formulario
 function mostrarFormulario() {
@@ -135,7 +134,7 @@ botonTema.addEventListener("click", cambiarTema);
 mostrarMenu.addEventListener("click", mostrarFormulario);
 botonRemoverPersonas.addEventListener("click", removerPersons);
 botonOutPersons.addEventListener("click", eliminarPersona);
-
+contenedor.style.backgroundColor = "grey";
 //LOGICA---------------------------------------------------
 mostrarEquipos();
 ////////////////////////////////////////////////////////////////

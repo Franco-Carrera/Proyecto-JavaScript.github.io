@@ -350,6 +350,7 @@ p {
   display: flex;
   justify-content: space-around;
   padding: 0.5rem;
+  margin-left: 2rem;
 }
 .oculto {
   display: none;
@@ -361,3 +362,15 @@ p {
   background-color: lightsalmon;
   margin: 1vh;
 }
+
+.btn-3 {
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 50px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+/* Orden abecedario */
