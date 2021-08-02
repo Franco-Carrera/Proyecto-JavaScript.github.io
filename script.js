@@ -11,17 +11,19 @@ class Team {
   }
 }
 class Persona {
-  constructor(nombre, edad) {
+  constructor(nombre, edad, eidr) {
     this.nombre = nombre;
     this.edad = edad;
+    this.eidr = eidr;
   }
 }
 //-------------VARIABLES---------------
 let arrayTablaCompleta = []; //array con TEAMS
-let boton1 = document.getElementById("btnd");
-let boton2 = document.getElementById("colour");
+let botonPersons = document.getElementById("btnIn");
+let botonTema = document.getElementById("colours");
 let mostrarMenu = document.getElementById("mostrarMenu");
 const botonRemoverPersonas = document.getElementById("eliminarDatos");
+let botonOutPersons = document.getElementById("btnOut");
 let contenedor = document.getElementsByTagName("div")[2];
 
 //***************LOCALSTORAGE*****************/
@@ -31,7 +33,7 @@ function guardarLocalStorage(clave, valor) {
 }
 //funcion descargar
 function descargarLocalStorage(clave) {
-  return JSON.parse(localStorage.getItem(clave));
+  const arrayTablaCompleta = JSON.parse(localStorage.getItem(clave));
 }
 //*********************************/
 
@@ -41,16 +43,16 @@ if (descargarLocalStorage("TablaCompleta") != null) {
   arrayTablaCompleta = descargarLocalStorage("TablaCompleta");
 }
 
-let respuestaCrearEquipo = prompt(
-  //idea de que aparezca primero que todo.
-  'Quieres añadir equipo responder "si" para continuar'
-);
-while (respuestaCrearEquipo === "si") {
-  anadirEquipo();
-  respuestaCrearEquipo = prompt(
-    'Quieres añadir OTRO equipo, responder "si" para continuar'
-  );
-}
+// let respuestaCrearEquipo = prompt(
+//   //idea de que aparezca primero que todo.
+//   'Quieres añadir equipo responder "si" para continuar'
+// );
+// while (respuestaCrearEquipo === "si") {
+//   anadirEquipo();
+//   respuestaCrearEquipo = prompt(
+//     'Quieres añadir OTRO equipo, responder "si" para continuar'
+//   );
+// } //---- Agregar fechas----
 
 function anadirEquipo(e) {
   //guardamos los values de inputs.
@@ -94,17 +96,26 @@ function mostrarEquipos() {
   console.log("Equipos: ", descargarLocalStorage("TablaCompleta"));
 }
 
-function añadirColor() {
-  const $colour = document.getElementById("box1");
-  $colour.style.backgroundColor = "lightgreen";
+//funcion para cambiar el color del menu
+function cambiarTema() {
+  document.body.classList.toggle("colours1");
 }
 contenedor.style.backgroundColor = "grey";
 
 //funcion para mostrar menu formulario
 function mostrarFormulario() {
-  document.getElementById("menuAgregar").classList.toggle("oculto");
+  document.getElementById("menuAgregar").classList.toggle("oculto"); //así con cada tabla de team luego
+}
+//funcion elimina persona
+function eliminarPersona(eidr) {
+  let arrayTablaCompleta = descargarLocalStorage();
+  arrayTablaCompleta = arrayTablaCompleta.filter(
+    (personas) => personas.eidr != eidr
+  );
+  guardarLocalStorage(arrayTablaCompleta);
 }
 
+//funcion limpia LocalStorage
 function removerPersons() {
   localStorage.clear();
   mostrarEquipos(descargarLocalStorage());
@@ -117,12 +128,13 @@ function borrarDatos(id) {
 }
 
 // EVENTOS ------------------------------------------------------------------ boton y evento añadir equipo
-boton1.addEventListener("click", anadirEquipo);
+botonPersons.addEventListener("click", anadirEquipo);
 //boton y evento color
-boton2.addEventListener("click", añadirColor);
+botonTema.addEventListener("click", cambiarTema);
 //----- boton y evento para mostrar formulario
 mostrarMenu.addEventListener("click", mostrarFormulario);
 botonRemoverPersonas.addEventListener("click", removerPersons);
+botonOutPersons.addEventListener("click", eliminarPersona);
 
 //LOGICA---------------------------------------------------
 mostrarEquipos();

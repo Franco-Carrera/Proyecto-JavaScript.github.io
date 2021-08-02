@@ -101,7 +101,8 @@ p {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-#btn {
+#btn,
+.btn-2 {
   border-radius: 0.5rem;
   padding: 1rem;
   display: inline-block;
@@ -112,7 +113,7 @@ p {
   color: var(--white-color);
   background-color: var(--first-color);
 }
-
+/* btn 2 */
 .contenedor {
   margin-left: auto;
   margin-right: auto;
@@ -321,7 +322,19 @@ p {
 }
 
 @media only screen and (max-width: 450px) {
+  #box1 {
+    background-color: rgb(216, 184, 182);
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    grid-area: 1;
+  }
   #box {
+    height: 250px;
+    font-size: 12px;
+    width: 80%;
+  }
+  #box2 {
     height: 250px;
     font-size: 12px;
     width: 80%;
@@ -341,7 +354,10 @@ p {
 .oculto {
   display: none;
 }
+.colours1 {
+  background-color: #222;
+}
 .tarjeta {
-  background-color: lightgreen;
+  background-color: lightsalmon;
   margin: 1vh;
 }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- _____________SEO______________ -->
-
+  <link rel="shortcut icon" href="./assets/fix.png" type="image/x-icon">
   <!-- _____________Fonts______________ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,24 +52,51 @@
       </aside>
     </article>
   </section>
-
+  <!-- -------------------------MENÚ------------ -->
   <h1>Menu Fixture</h1>
-  <button id="colour">Color Table one</button>
+  <button id="colours" class="btn-2">Color menú</button>
   <button id="mostrarMenu">+</button>
   <button id="eliminarDatos">-</button>
-
+  <!--Elimina Local Storage-->
+  <button id="btnQ">Eliminar todo</button>
+  <!--Elimina todo-->
+  <!-- ------------------------TITLES tablas -->
   <article id="acerca" class="tabla-titles">
     <h3>Primer Team</h3>
     <h3>Segundo Team</h3>
     <h3>Tercer Team</h3>
   </article>
-
+  <!-- -------------------------TEAMS------ -->
   <div class="container">
+    <!-- -----------Primer Team ------------->
     <div id="box1">
       <h3>1</h3>
       <div class="info">
         Iniciando mi cuadrícula de presentación.
         LLegamos hasta aquí con tal objetivo
+        <div id="removerPersona"></div>
+        <div id="menuAgregar" class="oculto">
+
+          <form id="formularioPersonas" autocomplete="off">
+            <input type="text" id="color" placeholder="color">
+            <input type="text" id="fecha" placeholder="Ingrese fecha">
+            <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
+            <input type="text" id="nombre" placeholder="nombre">
+            <input type="text" id="edad" placeholder="edad">
+            <button id="btnIn">Agregar persona</button>
+            <button id="btnOut">Quitar persona</button>
+            <!--Por ahora nombre y edad-->
+          </form>
+
+        </div>
+        <div id="listado"></div>
+      </div>
+    </div>
+    <!-- -----------Segundo Team --------------->
+    <div id="box">
+      <h3>2</h3>
+      <div class="info">
+        <p>Esta es mi información </p>
         <div id="menuAgregar" class="oculto">
           <form id="formularioPersonas" autocomplete="off">
             <input type="text" id="color" placeholder="color">
@@ -81,17 +108,10 @@
             <!--Por ahora nombre y edad-->
           </form>
         </div>
-        <div id="listado"></div>
+        <!-- <div id="listado2"></div> -->
       </div>
     </div>
-
-    <div id="box">
-      <h3>2</h3>
-      <div class="info">
-        <p>Esta es mi información </p>
-      </div>
-    </div>
-
+    <!-- ------------------Tercer Team--- -->
     <div id="box2">
       <h3>3</h3>
       <div class="info">
