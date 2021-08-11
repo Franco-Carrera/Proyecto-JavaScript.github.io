@@ -191,7 +191,6 @@ function mostrarFormularioDos() {
   d.getElementById("menuAgregarTwo").classList.toggle("hidden");
 } // agregar tercero
 
-
 // usar una de estas dos para  eliminar persona u team
 function eliminarPerson(eidr) {
   let arrayTablaCompleta = descargarLocalStorage();
@@ -200,7 +199,6 @@ function eliminarPerson(eidr) {
   );
   guardarLocalStorage(arrayTablaCompleta);
 } // sin uso esta por ahora.
-
 
 // EVENTOS ------------------------------------------------------------------ boton y evento añadir equipo
 botonPersons.addEventListener("click", anadirEquipo);

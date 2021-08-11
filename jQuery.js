@@ -20,8 +20,8 @@ $("#formularioPersonasTwo").append(
   '<button class="btnComprar">Registrar Equipo</button>'
 );
 
-$("button").on("mouseover", cambiarFondo);
-$("button").on("mouseleave", cambiarFondo);
+$(".btnComprar").on("mouseover", cambiarFondo);
+$(".btnComprar").on("mouseleave", cambiarFondo);
 
 function cambiarFondo() {
   $(this).toggleClass("fondoSeleccionado");
