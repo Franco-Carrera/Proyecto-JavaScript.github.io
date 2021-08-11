@@ -52,6 +52,7 @@ body {
 h1 {
   margin: 0;
   font-size: 2rem;
+  text-align: start;
 }
 
 h2 {
@@ -61,7 +62,6 @@ h2 {
 h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: black;
 }
 h4 {
   margin: 0;
@@ -87,11 +87,6 @@ p {
 }
 
 /* ********** Utilities ********** */ /*se reutiliza*/
-.avatar {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-}
 
 .bg-gray-light {
   background-color: var(--gray-light-color);
@@ -100,9 +95,8 @@ p {
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
-
-#btn,
-.btn-2 {
+/* *******BTN********* */
+#btn {
   border-radius: 0.5rem;
   padding: 1rem;
   display: inline-block;
@@ -113,7 +107,47 @@ p {
   color: var(--white-color);
   background-color: var(--first-color);
 }
-/* btn 2 */
+
+.btn-2 {
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--first-color);
+}
+.btn-2:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+.btn-3 {
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+.btn-4 {
+  /* boton registrar final, submit */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  color: var(--white-color);
+  background-color: var(--first-color);
+  scroll-margin-bottom: 4rem;
+} /* Orden abecedario */
+/* ******************************** */
+
 .contenedor {
   margin-left: auto;
   margin-right: auto;
@@ -128,7 +162,7 @@ p {
 }
 
 .section {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 .section-title {
   border-top: thin solid var(--first-color);
@@ -152,6 +186,11 @@ p {
 .text-right {
   text-align: right;
 }
+.box-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media screen and (min-width: 1024px) {
   .full-lg-screen {
     width: 100%;
@@ -292,7 +331,7 @@ p {
   }
 }
 
-/******************Site styles*********Equipos/*/
+/******************Site styles***************/
 .container {
   display: grid;
   padding: 1rem;
@@ -320,7 +359,7 @@ p {
   padding: 10px;
   text-align: center;
 }
-
+/* -------------------Tablas--------------------- */
 @media only screen and (max-width: 450px) {
   #box1 {
     background-color: rgb(216, 184, 182);
@@ -345,32 +384,66 @@ p {
   font-weight: bold;
   fill: var(--first-color);
 }
-
+/* .undraw {
+  width: 10%;
+  position: absolute;
+} */
+/* ********Reloj******* */
+#reloj {
+  font-size: 2rem;
+  text-shadow: 0px 0px 1px #333;
+  color: #666;
+}
+.reloj-contenedor {
+  background-color: rgb(172, 142, 60);
+  margin: 0 auto;
+  border-radius: 1rem;
+  text-align: center;
+  width: 35%;
+}
+#fecha {
+  letter-spacing: 0.5rem;
+  font-size: 0.8rem;
+}
+/* ********************** */
 .tabla-titles {
   display: flex;
   justify-content: space-around;
   padding: 0.5rem;
   margin-left: 2rem;
 }
-.oculto {
+/*---------------------- clases de js */
+.hidden {
   display: none;
 }
 .colours1 {
   background-color: #222;
 }
+.fondoSeleccionado {
+  background-color: burlywood;
+}
+.usuario {
+  background-color: rgba(20, 25, 45, 0.75);
+}
 .tarjeta {
   background-color: lightsalmon;
   margin: 1vh;
 }
-
-.btn-3 {
-  border-radius: 0.5rem;
-  display: inline-block;
-  width: 50px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
+.hone {
   color: var(--white-color);
-  background-color: var(--first-color);
 }
-/* Orden abecedario */
+.honeTwo {
+  color: var(--white-alpha-color);
+}
+input {
+  font-size: 0.95rem;
+  font-family: var(--font);
+  border: 0;
+  padding-left: 0;
+  border-bottom: thin solid var(--gray-dark-color);
+}
+.secundary {
+  color: var(--first-alpha-color);
+}
+
+/* ------------------------------------- */

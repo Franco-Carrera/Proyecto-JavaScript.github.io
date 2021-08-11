@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="estilos.css">
 </head>
+<!-- ------------Header----------------- -->
 
 <body>
   <header class="header">
@@ -39,6 +40,7 @@
       </nav>
     </section>
   </header>
+  <!-- ---------Section Home -->
   <section id="inicio" class="home">
     <article class="hero-image" style="--hero-image: url('assets/hero-image-home.jpg'); 
   --hero-attachment:fixed;">
@@ -47,22 +49,32 @@
           <h2 class="hero-image-title" style="--hero-text-color:var(--white-color);">Bienvenid@s<br>
             <!-- a mi sitio  -->
           </h2>
-          <a href="#contacto" id="btn">CONTÁCTAME</a>
+          <a href="#contacto" id="btn">ESCRIBIR</a>
+        </div>
         </div>
       </aside>
     </article>
   </section>
   <!-- -------------------------MENÚ------------ -->
-  <h1>Menu Fixture</h1>
-  <button id="colours" class="btn-2">Color menú</button>
+  <h1 id="h1" class="text-center">Menu Fixture</h1>
 
-  <button id="mostrarMenu" class="btn-3"> <img
-      src="https://img.icons8.com/fluency/48/000000/add-bookmark.png" /></button>
-  <a href="https://icons8.com/icon/bupuKVvO4EI1/añadir-marcador"></a>
+  <section class="section box-right">
+    <button id="colours" class="btn-2">☀️🌙</button>
+    <button id="mostrarMenu" class="btn-3"> <img
+        src="https://img.icons8.com/fluency/48/000000/  add-bookmark.png" /></button>
+    <a href="https://icons8.com/icon/bupuKVvO4EI1/añadir-marcador"></a>
+    <!--icon-->
+  </section>
 
-  <button id="eliminarDatos">-</button>
+  <!-- <button id="eliminarDatos">-</button> -->
   <!--Elimina Local Storage-->
-  <button id="btnQ">Eliminar todo</button>
+  <div id="reloj">
+    <div class="reloj-contenedor" id="contenedor">
+      <div id="hora">Reloj digital</div>
+      <div id="fecha">This is fetch</div>
+    </div>
+  </div>
+  <!-- <button id="btnEliminar">Eliminar equipos</button> -->
   <!--Elimina todo-->
   <!-- ------------------------TITLES tablas -->
   <article id="acerca" class="tabla-titles">
@@ -76,39 +88,38 @@
     <div id="box1">
       <h3>1</h3>
       <div class="info">
-        Iniciando mi cuadrícula de presentación.
-        LLegamos hasta aquí con tal objetivo
-        <div id="removerPersona"></div>
-        <div id="menuAgregar" class="oculto">
-
+        <div id="menuAgregar" class="hidden">
+          <!-- ------------Form----------------- -->
           <form id="formularioPersonas" autocomplete="off">
             <input type="text" id="color" placeholder="color">
-            <input type="text" id="fecha" placeholder="Ingrese fecha">
+            <input type="text" id="fechas" placeholder="Ingrese fecha">
             <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
             <input type="text" id="nombre" placeholder="nombre">
             <input type="text" id="edad" placeholder="edad">
+            <input type="text" id="dato" placeholder="dato">
             <button id="btnIn">Agregar persona</button>
             <button id="btnOut">Quitar persona</button>
+            <!--sin uso aún-->
             <!--Por ahora nombre y edad-->
           </form>
-
+          <!-- --.------------------------------------- -->
         </div>
-        <div id="listado"></div>
       </div>
     </div>
     <!-- -----------Segundo Team --------------->
     <div id="box">
       <h3>2</h3>
       <div class="info">
-        <p>Esta es mi información </p>
-        <div id="menuAgregar" class="oculto">
-          <form id="formularioPersonas" autocomplete="off">
-            <input type="text" id="color" placeholder="color">
-            <input type="text" id="fecha" placeholder="Ingrese fecha">
-            <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
-            <input type="text" id="nombre" placeholder="nombre">
-            <input type="text" id="edad" placeholder="edad">
-            <button id="btnd">Agregar persona</button>
+        <div id="menuAgregarTwo" class="hidden">
+          <form id="formularioPersonasTwo" autocomplete="off">
+            <input type="text" id="colorTwo" placeholder="color">
+            <input type="text" id="fechaTwo" placeholder="Ingrese fecha">
+            <input type="text" id="integrantes2" placeholder="Ingrese cant /integrantes">
+            <input type="text" id="nombreTwo" placeholder="nombre">
+            <input type="text" id="edadTwo" placeholder="edad">
+            <input type="text" id="datoTwo" placeholder="dato">
+            <button id="btnInTwo">Agregar persona</button>
+            <button id="btnOutTwo">Quitar persona</button>
             <!--Por ahora nombre y edad-->
           </form>
         </div>
@@ -119,13 +130,28 @@
     <div id="box2">
       <h3>3</h3>
       <div class="info">
-        Esta es mi presentación
+        <div id="menuAgregarThree" class="hidden">
+          <form id="formularioPersonasThree" autocomplete="off">
+            <input type="text" id="colorThree" placeholder="color">
+            <input type="text" id="fechaThree" placeholder="Ingrese fecha">
+            <input type="text" id="integrantes3" placeholder="Ingrese cant /integrantes">
+            <input type="text" id="nombreThree" placeholder="nombre">
+            <input type="text" id="edadThree" placeholder="edad">
+            <input type="text" id="datoThree" placeholder="dato">
+            <button id="btnInThree">Agregar persona</button>
+            <button id="btnOutThree">Quitar persona</button>
+            <!--Por ahora nombre y edad-->
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="menu.js"></script>
+    <!-- ---------------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+    <script src="reloj.js"></script>
+    <script src="jQuery.js"></script>
 </body>
 
 </html>
