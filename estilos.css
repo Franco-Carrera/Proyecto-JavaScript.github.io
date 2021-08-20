@@ -96,15 +96,19 @@ p {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 /* *******BTN********* */
-#btn {
+#btn,
+.btn {
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.8rem;
+  margin: 1rem;
+  font-size: 1rem;
   display: inline-block;
   width: 200px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   color: var(--white-color);
+  font-family: var(--font);
   background-color: var(--first-color);
 }
 
@@ -119,7 +123,18 @@ p {
 }
 .btn-2:hover {
   background-color: var(--second-color);
-  color: var(--first-color);
+}
+.btn-2Sun:hover {
+  background-color: gold;
+}
+
+.sectionUsuarios {
+  padding: 1rem 5rem;
+}
+.card {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  background-color: var(--first-color);
 }
 .btn-3 {
   border-radius: 0.5rem;
@@ -189,6 +204,8 @@ p {
 .box-right {
   display: flex;
   justify-content: flex-end;
+  margin-top: -5rem;
+  margin-bottom: 0.6rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -423,11 +440,12 @@ p {
   background-color: burlywood;
 }
 .usuario {
-  background-color: rgba(20, 25, 45, 0.75);
+  background-color: var(--second-alpha-color);
 }
 .tarjeta {
   background-color: lightsalmon;
   margin: 1vh;
+  padding: 0 0.6rem;
 }
 .hone {
   color: var(--white-color);
@@ -435,15 +453,46 @@ p {
 .honeTwo {
   color: var(--white-alpha-color);
 }
+.colorsTables {
+  background-color: violet;
+}
+.aqua {
+  background-color: aquamarine;
+}
 input {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: var(--font);
   border: 0;
   padding-left: 0;
   border-bottom: thin solid var(--gray-dark-color);
 }
+.pAjax {
+  padding: 0rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
 .secundary {
   color: var(--first-alpha-color);
 }
+/* ----- -----  Estilos para Validacion ----- ----- */
+form {
+  padding: 1rem;
+}
+.formulario__grupo-correcto .formulario__validacion-estado {
+  color: #1ed12d;
+  opacity: 1;
+}
 
+.formulario__grupo-incorrecto .formulario__label {
+  color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+  color: #bb2929;
+  opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+  border: 3px solid #bb2929;
+}
 /* ------------------------------------- */

@@ -4,7 +4,7 @@ const mostrarReloj = () => {
   let min = formatoHora(fecha.getMinutes());
   let seg = formatoHora(fecha.getSeconds());
   document.getElementById("hora").innerHTML = ` ${hr}: ${min}: ${seg}`;
-  /* const meses = [
+  const meses = [
     "Ene",
     "Feb",
     "Mar",
@@ -18,12 +18,20 @@ const mostrarReloj = () => {
     "Nov",
     "Dic",
   ];
-  const dias = ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"];
+  const dias = [
+    "Dom",
+    "Lunes",
+    "Martes",
+    "Miercoles",
+    "Jueves",
+    "Viernes",
+    "Sab",
+  ];
   let diaSemana = dias[fecha.getDay()];
   let dia = fecha.getDate();
-  let mes = meses(fecha.getMonth());
-  let fechaTexto = `${diaSemana}, ${dia} ${mes}`; */
-  //document.getElementById("fecha").innerHTML = fechaTexto;
+  let mes = meses[fecha.getMonth()];
+  let fechaTexto = `${diaSemana}, ${dia}, ${mes}`;
+  document.getElementById("fechaDate").innerHTML = fechaTexto;
 };
 document.body.addEventListener("load", mostrarReloj);
 

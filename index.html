@@ -8,6 +8,7 @@
   <title>Document</title>
   <!-- _____________SEO______________ -->
   <link rel="shortcut icon" href="./assets/fix.png" type="image/x-icon">
+
   <!-- _____________Fonts______________ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
   <header class="header">
     <section class="contein">
       <div class="logo">
-        <img class="logo-fix" src="assets/fix.png" alt="logo fix">
+        <img class="logo-fix" src="assets/fix.png" alt="logo-fix">
       </div>
       <button class="menu-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -36,7 +37,6 @@
       <nav class="menu">
         <a href="#inicio">Inicio</a>
         <a href="#acerca">Acerca</a>
-        <a href="#servicios">Servicios</a>
       </nav>
     </section>
   </header>
@@ -57,27 +57,25 @@
   </section>
   <!-- -------------------------MENÚ------------ -->
   <h1 id="h1" class="text-center">Menu Fixture</h1>
-
-  <section class="section box-right">
-    <button id="colours" class="btn-2">☀️🌙</button>
+  <!--section hidden desde aquí probar. si sale vamos, renovamos api si podemos, sino en 4 days entregamos.  -->
+  <div id="reloj">
+    <div class="reloj-contenedor" id="contenedor">
+      <div id="hora">Reloj digital</div>
+      <div id="fechaDate">This is fetch</div>
+    </div>
+  </div>
+  <!-- --------------------------------- -->
+  <button id="btnEliminar" class="btn">Eliminar equipos</button>
+  <section class="section box-right ">
+    <button id="theme" class="btn-2">☀️</button>
     <button id="mostrarMenu" class="btn-3"> <img
         src="https://img.icons8.com/fluency/48/000000/  add-bookmark.png" /></button>
     <a href="https://icons8.com/icon/bupuKVvO4EI1/añadir-marcador"></a>
     <!--icon-->
   </section>
-
-  <!-- <button id="eliminarDatos">-</button> -->
-  <!--Elimina Local Storage-->
-  <div id="reloj">
-    <div class="reloj-contenedor" id="contenedor">
-      <div id="hora">Reloj digital</div>
-      <div id="fecha">This is fetch</div>
-    </div>
-  </div>
-  <!-- <button id="btnEliminar">Eliminar equipos</button> -->
   <!--Elimina todo-->
   <!-- ------------------------TITLES tablas -->
-  <article id="acerca" class="tabla-titles">
+  <article id="acerca" class="tabla-titles ">
     <h3>Primer Team</h3>
     <h3>Segundo Team</h3>
     <h3>Tercer Team</h3>
@@ -86,18 +84,22 @@
   <div class="container">
     <!-- -----------Primer Team ------------->
     <div id="box1">
-      <h3>1</h3>
       <div class="info">
         <div id="menuAgregar" class="hidden">
           <!-- ------------Form----------------- -->
           <form id="formularioPersonas" autocomplete="off">
-            <input type="text" id="color" placeholder="color">
-            <input type="text" id="fechas" placeholder="Ingrese fecha">
+            <select id="selects" name="select">
+              <option id="violeta" value="value1">Violeta</option>
+              <option id="marino" value="value2" selected>Value 2</option>
+              <option id="verde" value="value3">Value 3</option>
+            </select>
+            <input type="text" id="color" placeholder="color aleatorio">
             <input type="text" id="integrantes" placeholder="Ingrese cant /integrantes">
-            <input type="text" id="nombre" placeholder="nombre">
+            <input type="text" id="nombre" placeholder="nombre" class="formulario__input">
             <input type="text" id="edad" placeholder="edad">
             <input type="text" id="dato" placeholder="dato">
             <button id="btnIn">Agregar persona</button>
+            <!-- agregar botón de + -->
             <button id="btnOut">Quitar persona</button>
             <!--sin uso aún-->
             <!--Por ahora nombre y edad-->
@@ -108,12 +110,12 @@
     </div>
     <!-- -----------Segundo Team --------------->
     <div id="box">
-      <h3>2</h3>
       <div class="info">
+        <!-- The second value will be selected initially -->
         <div id="menuAgregarTwo" class="hidden">
           <form id="formularioPersonasTwo" autocomplete="off">
-            <input type="text" id="colorTwo" placeholder="color">
-            <input type="text" id="fechaTwo" placeholder="Ingrese fecha">
+            <!--  -->
+            <input type="text" id="colorTwo" placeholder="color aleatorio">
             <input type="text" id="integrantes2" placeholder="Ingrese cant /integrantes">
             <input type="text" id="nombreTwo" placeholder="nombre">
             <input type="text" id="edadTwo" placeholder="edad">
@@ -128,12 +130,10 @@
     </div>
     <!-- ------------------Tercer Team--- -->
     <div id="box2">
-      <h3>3</h3>
       <div class="info">
         <div id="menuAgregarThree" class="hidden">
           <form id="formularioPersonasThree" autocomplete="off">
-            <input type="text" id="colorThree" placeholder="color">
-            <input type="text" id="fechaThree" placeholder="Ingrese fecha">
+            <input type="text" id="colorThree" placeholder="color aleatorio">
             <input type="text" id="integrantes3" placeholder="Ingrese cant /integrantes">
             <input type="text" id="nombreThree" placeholder="nombre">
             <input type="text" id="edadThree" placeholder="edad">
@@ -145,13 +145,25 @@
         </div>
       </div>
     </div>
-    <!-- ---------------------------------------- -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script src="menu.js"></script>
-    <script src="reloj.js"></script>
-    <script src="jQuery.js"></script>
+  </div>
+  <!-- -------------------------Petición--------------- -->
+  <div class="containDates">
+    <div id="infoDates">
+      <!-- Info -->
+      <div id="list" class="sectionUsuarios">
+        <div class="row justify-content-center text-center">
+          <!-- DATOS -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ------------------------------------------ -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+  <script src="reloj.js"></script>
+  <script src="jQuery.js"></script>
 </body>
 
 </html>
