@@ -38,7 +38,8 @@ const theme = () => {
 
 const oscurecer = () => {
   $("body").css("background-color", "#222");
-  $("p").css("color", "#ccc");
+  $("p").css("color", "#222");
+  $("p:last").css("color", "#ccc");
   $("h1").css("color", "#ccc");
   $("h3").css("color", "#ccc");
   $("a").css("color", "--second-color");
@@ -49,7 +50,7 @@ const oscurecer = () => {
 };
 
 const aclarar = () => {
-  $("body").css("background-color", "white");
+  $("body").css("background-color", "#fff");
   $("p").css("color", "#222");
   // ver selectores avanzados de header, remodel api, seo, color tabla, subida al server y fin.
   $("h1").css("color", "#333");
@@ -91,6 +92,9 @@ $("#users").dblclick(() => {
                                 </div>`);
       }
     }
+    $("#titleDh3").show(1500);
+    $(".pAjax").fadeOut(2500);
+    $("#titleDh3").fadeOut(2500);
   });
 });
 

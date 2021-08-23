@@ -27,15 +27,9 @@ let botonPersons = d.getElementById("btnIn"); //Agrega peronas 1 y 2
 let botonPersonsTwo = d.getElementById("btnInTwo");
 let botonPersonsThree = d.getElementById("btnInThree");
 
-//let botonTema = d.getElementById("colours"); //cambia tema
-let botonTable = d.getElementById("selects");
+//let botonTable = d.getElementById("selects");
 
 let mostrarMenu = d.getElementById("mostrarMenu"); //boton abre form 1 , 2 y 3
-
-// const botonRemoverPersonas = d.getElementById("eliminarDatos"); //Limpia local
-//let botonModificar = d.getElementById("equipo4"); //modifica.
-
-let botonQuitarPerson = d.getElementById("btnOut"); //elimina persona //sin uso
 
 let botonOutPersons = d.getElementById("btnEliminar");
 //elimina todo
@@ -297,7 +291,7 @@ mostrarMenu.addEventListener("mouseenter", mostrarFormularioTres);
 
 botonOutPersons.addEventListener("click", borrarEquipos);
 
-botonTable.addEventListener("click", colorTable);
+//botonTable.addEventListener("click", colorTable);
 //botonModificar.addEventListener("click", modificar);
 
 //LOGICA--------------------------------------------------

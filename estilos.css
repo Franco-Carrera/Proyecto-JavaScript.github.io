@@ -9,6 +9,7 @@
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
+  --pale-color: rgb(107, 190, 121);
   --gray-dark-color: #666;
   --black-color: #000;
   --link-color: #509ee3;
@@ -112,57 +113,7 @@ p {
   background-color: var(--first-color);
 }
 
-.btn-2 {
-  border-radius: 0.5rem;
-  display: inline-block;
-  width: 60px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--first-color);
-}
-.btn-2:hover {
-  background-color: var(--second-color);
-}
-.btn-2Sun:hover {
-  background-color: gold;
-}
-
-.sectionUsuarios {
-  padding: 1rem 5rem;
-}
-.card {
-  border: 1px solid #333;
-  padding: 0.5rem;
-  background-color: var(--first-color);
-}
-.btn-3 {
-  border-radius: 0.5rem;
-  display: inline-block;
-  width: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: var(--white-color);
-  background-color: var(--first-color);
-}
-.btn-4 {
-  /* boton registrar final, submit */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: inline-block;
-  width: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  color: var(--white-color);
-  background-color: var(--first-color);
-  scroll-margin-bottom: 4rem;
-} /* Orden abecedario */
 /* ******************************** */
-
 .contenedor {
   margin-left: auto;
   margin-right: auto;
@@ -213,7 +164,9 @@ p {
     width: 100%;
     min-height: 105vh; /*cambiable*/
   }
-
+  form {
+    padding: 0.5rem;
+  }
   .text-lg-center {
     text-align: center;
   }
@@ -244,12 +197,12 @@ p {
   text-align: center;
   background-color: var(--hero-opacity-color);
 }
-
 .hero-image-title {
   font-size: 7.5vw;
   color: var(--hero-text-color);
 }
 
+/* *************Header******** */
 .header {
   position: fixed;
   left: 0;
@@ -260,18 +213,23 @@ p {
   height: var(--header-height);
   background-color: var(--second-color);
 }
-
 .header > .contein {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* ********Logo********** */
 
 .logo a {
   color: var(--first-color);
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+}
+.logo-fix {
+  width: 45%;
+  font-weight: bold;
+  fill: var(--first-color);
 }
 
 /***********Menú**********  */
@@ -305,8 +263,8 @@ p {
 }
 
 .menu a {
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 0.8rem;
+  font-size: 1.4rem;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -344,67 +302,130 @@ p {
     position: sticky;
     top: 0;
     padding: 0.5rem;
-    height: calc(var(--header-height)- 0.5rem);
+    height: calc(var(--header-height)- 0.4rem);
   }
 }
 
 /******************Site styles***************/
+/*********Buttons********* */
+.btn-2 {
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--first-color);
+}
+.btn-2:hover {
+  background-color: var(--second-color);
+}
+.btn-2Sun:hover {
+  background-color: gold;
+}
+
+.btn-2suma {
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  width: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: var(--first-color);
+  padding-left: 0.5rem;
+}
+.btn-2suma:hover {
+  background-color: var(--pale-color);
+}
+
+.btn-3 {
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+.btn-4 {
+  /* boton registrar final, submit */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  color: var(--white-color);
+  background-color: var(--first-color);
+  scroll-margin-bottom: 4rem;
+}
+/* ************************** */
+/* **********Tablas************* */
 .container {
   display: grid;
   padding: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   margin-top: 10px;
-  height: 450px;
+  height: 30rem;
 }
 
 #box1 {
   background-color: rgb(216, 184, 182);
   color: #000;
   text-align: center;
-  padding: 10px;
+  padding: 0.5rem;
   grid-area: 1;
 }
 
 #box {
   background: rgb(216, 184, 182);
-  padding: 10px;
+  padding: 0.5rem;
   text-align: center;
 }
 #box2 {
   background: rgb(216, 184, 182);
-  padding: 10px;
+  padding: 0.5rem;
   text-align: center;
 }
-/* -------------------Tablas--------------------- */
-@media only screen and (max-width: 450px) {
-  #box1 {
-    background-color: rgb(216, 184, 182);
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    grid-area: 1;
+/* -------------------Tablas Mquerie--------------------- */
+@media only screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 10%;
   }
-  #box {
-    height: 250px;
-    font-size: 12px;
-    width: 80%;
+  .boxes {
+    height: 30rem;
   }
-  #box2 {
-    height: 250px;
-    font-size: 12px;
-    width: 80%;
+  form {
+    padding: 0rem;
+  }
+  #reloj {
+    padding: 1rem;
+  }
+  .reloj-mobile {
+    font-size: 1.3rem;
+  }
+  article > h3 {
+    display: none;
+  }
+  html {
+    margin-bottom: 6rem;
+  }
+  a:last-child {
+    display: none;
   }
 }
-.logo-fix {
-  width: 45%;
-  font-weight: bold;
-  fill: var(--first-color);
+@media only screen and (min-width: 501px) {
+  .mobile-h3 {
+    display: none;
+  }
 }
-/* .undraw {
-  width: 10%;
-  position: absolute;
-} */
+
 /* ********Reloj******* */
 #reloj {
   font-size: 2rem;
@@ -433,6 +454,7 @@ p {
 .hidden {
   display: none;
 }
+
 .colours1 {
   background-color: #222;
 }
@@ -466,6 +488,15 @@ input {
   padding-left: 0;
   border-bottom: thin solid var(--gray-dark-color);
 }
+
+.card {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  background-color: var(--first-color);
+}
+.sectionUsuarios {
+  padding: 1rem 5rem;
+}
 .pAjax {
   padding: 0rem 1rem;
   margin-top: 1rem;
@@ -474,10 +505,8 @@ input {
 .secundary {
   color: var(--first-alpha-color);
 }
+
 /* ----- -----  Estilos para Validacion ----- ----- */
-form {
-  padding: 1rem;
-}
 .formulario__grupo-correcto .formulario__validacion-estado {
   color: #1ed12d;
   opacity: 1;
