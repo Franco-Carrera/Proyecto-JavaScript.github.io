@@ -1,8 +1,7 @@
 //------------ENTIDADES-----------
 class Team {
-  constructor(color, personas, id) {
-    this.color = color;
-    this.personas = personas; //array de personas
+  constructor(personas, id) {
+    this.personas = personas; //objeto con personas
     this.id = id;
   }
   agregarPersona(persona) {
@@ -22,17 +21,21 @@ const d = document;
 const ls = localStorage;
 
 let arrayTablaCompleta = []; //array con TEAMS
+let personas = []; // array de personas
 
-let botonPersons = d.getElementById("btnIn"); //Agrega peronas 1 y 2
+let botonPersons = d.getElementById("btnIn"); //Agrega personas
 let botonPersonsTwo = d.getElementById("btnInTwo");
 let botonPersonsThree = d.getElementById("btnInThree");
 
-//let botonTable = d.getElementById("selects");
-
-let mostrarMenu = d.getElementById("mostrarMenu"); //boton abre form 1 , 2 y 3
-
 let botonOutPersons = d.getElementById("btnEliminar");
 //elimina todo
+
+//--Selects
+let $selectsEventFirst = d.getElementById("mySelection");
+let $selectsEventSecond = d.getElementById("mySelectionTwo");
+let $selectsEventThree = d.getElementById("mySelectionThree");
+
+let mostrarMenu = d.getElementById("mostrarMenu"); //boton abre form 1 , 2 y 3
 
 //***************LOCALSTORAGE*****************/
 //funcion guardar
@@ -51,31 +54,11 @@ if (descargarLocalStorage("TablaCompleta") != null) {
   arrayTablaCompleta = descargarLocalStorage("TablaCompleta");
 }
 
-/*
-let respuestaCrearEquipo =
-  //idea de que aparezca primero que todo.
-  'Quieres añadir equipo responder "si" para continuar';
-while (respuestaCrearEquipo === "si") {
-  anadirEquipo();
-  respuestaCrearEquipo = prompt(
-    'Quieres añadir OTRO equipo, responder "si" para continuar'
-  );
-}
-*/ //// idea principal para que aparezca cada equipo.
-//puede  ser un hidden
-
-///
-///
-
-// // https://www.thecolorapi.com/id?hex=24B1E0
-
 /*************Funciones***************** */
-
 //añadir equipo uno
 function anadirEquipo(e) {
   //guardamos los values de inputs.
   e.preventDefault();
-  const color = d.getElementById("color").value;
   const cantidadIntegrantes = d.getElementById("integrantes").value;
   const personas = [];
 
@@ -106,7 +89,7 @@ function anadirEquipo(e) {
     d.getElementById("formularioPersonas").reset();
   });
 
-  const nuevoEquipo = new Team(color, personas);
+  const nuevoEquipo = new Team(cantidadIntegrantes, personas); //PINTAR SEARCH
   //luego nuevo TEAM, se suma al array y se guarda
   arrayTablaCompleta.push(nuevoEquipo);
   guardarLocalStorage("TablaCompleta", arrayTablaCompleta);
@@ -116,7 +99,6 @@ function anadirEquipo(e) {
 function AñadirEquipoDos(e) {
   e.preventDefault();
 
-  const color = d.getElementById("colorTwo").value;
   const cantidadIntegrantes = d.getElementById("integrantes2").value;
   const personas = [];
 
@@ -148,7 +130,7 @@ function AñadirEquipoDos(e) {
     d.getElementById("formularioPersonasTwo").reset();
   });
 
-  const nuevoEquipo = new Team(color, personas); //luego nuevo TEAM, se suma al array y se guarda
+  const nuevoEquipo = new Team(cantidadIntegrantes, personas); //luego nuevo TEAM, se suma al array y se guarda
   arrayTablaCompleta.push(nuevoEquipo);
   guardarLocalStorage("TablaCompleta", arrayTablaCompleta);
 }
@@ -156,7 +138,6 @@ function AñadirEquipoDos(e) {
 function AñadirEquipoTres(e) {
   e.preventDefault();
 
-  const color = d.getElementById("colorThree").value; //
   const cantidadIntegrantes = d.getElementById("integrantes3").value;
   const personas = [];
 
@@ -185,10 +166,11 @@ function AñadirEquipoTres(e) {
     d.getElementById("formularioPersonasThree").reset();
   });
 
-  const nuevoEquipo = new Team(color, personas);
+  const nuevoEquipo = new Team(cantidadIntegrantes, personas);
   arrayTablaCompleta.push(nuevoEquipo);
   guardarLocalStorage("TablaCompleta", arrayTablaCompleta);
 }
+
 //-------------------------------------------------
 // usar los id de c/ team para hacer una sola función.
 
@@ -196,61 +178,6 @@ function mostrarEquipos() {
   console.log("Equipos: ", descargarLocalStorage("TablaCompleta"));
 }
 
-//validar form, u api que reemplaza get users.
-/*
-if (color.value == "green" || color.value == "verde") {
-  d.getElementById("box1").style.backgroundColor = "lightgreen";
-} else {
-  d.getElementById("box1").style.backgroundColor = "palegoldenrod";
-}
-
-function insertarColor() {
-  let opt_1 = [];
-  let opt_2 = [];
-  let opt_3 = [];
-  let opt_4 = [];
-  let opt_5 = [];
-}
-
-function cambiaBox() {
-  let option;
-  option = document.firstChild.op;
-}
-/*     + BUSQUEDA  YOUTUBE CSS NODOS 
-function colorBox() {
-  document.getElementsByTagName("select");
-  const valor = d.getElementById("violeta");
-
-  if ((select = valor)) {
-    document.getElementById("box1").style.backgroundColor = "purple";
-  }
-}
-}*/
-////////////////////////////////////////
-const options = d.getElementsByTagName("option");
-console.log(options);
-
-function colorTable() {
-  if (botonTable.firstElementChild.id == "violeta") {
-    d.getElementById("box1").style.backgroundColor = "violet";
-    console.log("es violeta");
-  }
-  if (botonTable.firstElementChild.nextElementSibling.id == "marino") {
-    d.querySelector("#box1").setAttribute("class", "aqua");
-    console.log("es aquaa");
-  } else if (botonTable.lastElementChild.id == "verde");
-  d.getElementById("box1").style.backgroundColor = "green";
-  console.log("value es 3 green");
-}
-
-// se puede dividir en funciones seguir investigando, sino hablar tutor.
-/*
-botonTable.firstElementChild.nextElementSibling.value == "value2"
-  ) {
-    d.getElementById("box1").style.backgroundColor = "aquamarine";
-    console.log("es aqua");
-  }
-*/
 //funcion para mostrar menu formulario
 function mostrarFormulario() {
   d.getElementById("menuAgregar").classList.toggle("hidden"); //así con cada tabla de team luego
@@ -260,6 +187,20 @@ function mostrarFormularioDos() {
 } // agregar tercero
 function mostrarFormularioTres() {
   d.getElementById("menuAgregarThree").classList.toggle("hidden");
+}
+
+//funcion para cambiar color de Selects
+function colorTable() {
+  let selectValue = d.getElementById("mySelection").value;
+  d.getElementById("box1").style.backgroundColor = selectValue;
+}
+function colorTableTwo() {
+  let selectValue = d.getElementById("mySelectionTwo").value;
+  d.getElementById("box").style.backgroundColor = selectValue;
+}
+function colorTableThree() {
+  let selectValue = d.getElementById("mySelectionThree").value;
+  d.getElementById("box2").style.backgroundColor = selectValue;
 }
 
 // funcion elimina todo lo introducido
@@ -281,9 +222,6 @@ botonPersons.addEventListener("click", anadirEquipo);
 botonPersonsTwo.addEventListener("click", AñadirEquipoDos);
 botonPersonsThree.addEventListener("click", AñadirEquipoTres);
 
-//boton y evento color
-//colorTabla.addEventListener("focusin", insertarColor);
-
 //----- boton y evento para mostrar formulario
 mostrarMenu.addEventListener("mouseenter", mostrarFormulario);
 mostrarMenu.addEventListener("mouseenter", mostrarFormularioDos);
@@ -291,11 +229,10 @@ mostrarMenu.addEventListener("mouseenter", mostrarFormularioTres);
 
 botonOutPersons.addEventListener("click", borrarEquipos);
 
-//botonTable.addEventListener("click", colorTable);
-//botonModificar.addEventListener("click", modificar);
+$selectsEventFirst.addEventListener("change", colorTable);
+$selectsEventSecond.addEventListener("change", colorTableTwo);
+$selectsEventThree.addEventListener("change", colorTableThree);
 
 //LOGICA--------------------------------------------------
-//colorBox();
 mostrarEquipos();
 //-----------------------------------------------------
-// validar formulario

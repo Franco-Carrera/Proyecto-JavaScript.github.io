@@ -19,7 +19,7 @@
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Indie Flower", cursive;
   --max-width: 1200px;
-  --header-height: 5rem;
+  --header-height: 5.3rem;
 }
 
 /* ******** Reset ******* */
@@ -112,32 +112,32 @@ p {
   font-family: var(--font);
   background-color: var(--first-color);
 }
-
+.pointer {
+  cursor: pointer;
+}
 /* ******************************** */
+
+.box-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5rem;
+  margin-bottom: 0.6rem;
+}
 .contenedor {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width);
 }
-.gray-scale {
-  filter: grayscale(1);
-}
 
+/* .gray-scale {
+  filter: grayscale(1);
+} */
 .none {
   display: none;
 }
 
 .section {
   padding: 1rem 1rem;
-}
-.section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
-  margin: 2rem auto;
-  padding: 0.5rem 1rem;
-  width: 250px;
-  text-align: center;
-  color: var(--title-color);
 }
 
 .text-first-color {
@@ -152,20 +152,11 @@ p {
 .text-right {
   text-align: right;
 }
-.box-right {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: -5rem;
-  margin-bottom: 0.6rem;
-}
 
 @media screen and (min-width: 1024px) {
   .full-lg-screen {
     width: 100%;
     min-height: 105vh; /*cambiable*/
-  }
-  form {
-    padding: 0.5rem;
   }
   .text-lg-center {
     text-align: center;
@@ -325,8 +316,8 @@ p {
 }
 
 .btn-2suma {
-  margin: 0.5rem;
-  border-radius: 0.5rem;
+  margin: 0.6rem;
+  border-radius: 1.5rem;
   width: 3rem;
   font-weight: bold;
   text-decoration: none;
@@ -336,7 +327,6 @@ p {
 .btn-2suma:hover {
   background-color: var(--pale-color);
 }
-
 .btn-3 {
   border-radius: 0.5rem;
   display: inline-block;
@@ -348,19 +338,16 @@ p {
   color: var(--white-color);
   background-color: var(--first-color);
 }
-.btn-4 {
-  /* boton registrar final, submit */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: inline-block;
-  width: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  color: var(--white-color);
-  background-color: var(--first-color);
-  scroll-margin-bottom: 4rem;
+/* ------------------ */
+form {
+  padding: 0rem 3rem;
+}
+input {
+  font-size: 0.95rem;
+  font-family: var(--font);
+  border: 0;
+  padding-left: 0;
+  border-bottom: thin solid var(--gray-dark-color);
 }
 /* ************************** */
 /* **********Tablas************* */
@@ -401,11 +388,14 @@ p {
   .boxes {
     height: 30rem;
   }
+  .footer {
+    margin-bottom: -0.9rem;
+  }
   form {
     padding: 0rem;
   }
   #reloj {
-    padding: 1rem;
+    padding: 1rem 0rem 2rem 0rem;
   }
   .reloj-mobile {
     font-size: 1.3rem;
@@ -443,23 +433,17 @@ p {
   letter-spacing: 0.5rem;
   font-size: 0.8rem;
 }
-/* ********************** */
+/* *********Titles************* */
 .tabla-titles {
   display: flex;
   justify-content: space-around;
   padding: 0.5rem;
   margin-left: 2rem;
 }
+
 /*---------------------- clases de js */
 .hidden {
   display: none;
-}
-
-.colours1 {
-  background-color: #222;
-}
-.fondoSeleccionado {
-  background-color: burlywood;
 }
 .usuario {
   background-color: var(--second-alpha-color);
@@ -469,34 +453,19 @@ p {
   margin: 1vh;
   padding: 0 0.6rem;
 }
-.hone {
-  color: var(--white-color);
-}
-.honeTwo {
-  color: var(--white-alpha-color);
-}
-.colorsTables {
-  background-color: violet;
-}
-.aqua {
-  background-color: aquamarine;
-}
-input {
-  font-size: 1rem;
-  font-family: var(--font);
-  border: 0;
-  padding-left: 0;
-  border-bottom: thin solid var(--gray-dark-color);
-}
 
+/* ******Peticiones******* */
 .card {
   border: 1px solid #333;
   padding: 0.5rem;
   background-color: var(--first-color);
 }
 .sectionUsuarios {
-  padding: 1rem 5rem;
+  padding: 10rem 2rem;
 }
+/* .smalled {
+  margin-top: 5rem;
+} */
 .pAjax {
   padding: 0rem 1rem;
   margin-top: 1rem;
@@ -512,16 +481,10 @@ input {
   opacity: 1;
 }
 
-.formulario__grupo-incorrecto .formulario__label {
-  color: #bb2929;
-}
-
-.formulario__grupo-incorrecto .formulario__validacion-estado {
-  color: #bb2929;
-  opacity: 1;
-}
-
-.formulario__grupo-incorrecto .formulario__input {
-  border: 3px solid #bb2929;
+.footer {
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--third-alpha-color);
 }
 /* ------------------------------------- */

@@ -52,7 +52,6 @@ const oscurecer = () => {
 const aclarar = () => {
   $("body").css("background-color", "#fff");
   $("p").css("color", "#222");
-  // ver selectores avanzados de header, remodel api, seo, color tabla, subida al server y fin.
   $("h1").css("color", "#333");
   $("h3").css("color", "#333");
   $("header").css("color", "#a85c7e");
@@ -75,9 +74,8 @@ if (localStorage.getItem("modo") == "dark") {
 const URL = "https://jsonplaceholder.typicode.com";
 
 $("#infoDates").prepend(
-  '<div id="users" class="btn">GET USERS registrados</div>'
+  '<div id="users" class="btn pointer">Ver USERS registrados</div>'
 );
-$("#infoDates").prepend(`<p class="pAjax">Doble click para ver usuarios</p>`);
 
 $("#users").dblclick(() => {
   $.get(`${URL}/users`, function (res, state) {
